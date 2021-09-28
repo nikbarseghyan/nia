@@ -1,0 +1,28 @@
+name: "nia"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release: 
+    name: nia
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v1
+      - name: node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+          registry-url: https://registry.npmjs.org/
+          scope: '@rebiss'
+          always-auth: true
+      - name: Install dependencies
+        run: npm install
+      - name: Publish pkg
+        run: npm publish --access public
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+          NODE_AUTH_TOKEN: ${{secrets.NPM_NIA_TOKEN}}

@@ -1,0 +1,26 @@
+{
+  "extends": ["airbnb", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["prettier"],
+  "env": {
+    "node": true,
+    "jest": true
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "none",
+        "tabWidth": 2,
+        "semi": true,
+        "singleQuote": true,
+        "arrowParens": "always"
+      }
+    ],
+
+    "comma-dangle": "off",
+    "linebreak-style": ["error", "windows"],
+    "no-unused-vars": ["error", { "argsIgnorePattern": "next" }],
+    "no-use-before-define": ["error", { "functions": false }]
+  }
+}

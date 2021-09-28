@@ -1,0 +1,39 @@
+{
+  "name": "nia.js",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "version": "1.1.4",
+  "type": "module",
+  "author": "rebiss",
+  "scripts": {
+    "build": "rimraf ./build && tsc",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
+  },
+  "keywords": [
+    "mongodb",
+    "elasticsearch",
+    "transfer"
+  ],
+  "dependencies": {
+    "@types/elasticsearch": "^5.0.38",
+    "@types/progress": "^2.0.5",
+    "elasticsearch": "^16.7.2",
+    "mongodb": "^4.1.2",
+    "p-queue": "7.1.0",
+    "progress": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^16.10.1",
+    "@typescript-eslint/parser": "^4.31.2",
+    "eslint": "^7.32.0",
+    "prettier": "^2.4.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.4.3"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "license": "ISC",
+  "homepage": "https://github.com/Rebiss/nia#readme",
+  "description": "Transfer MongoDB collection data into Elasticsearch."
+}
